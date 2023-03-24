@@ -1,6 +1,6 @@
 # 🏠 CASAFARI
 
-Casari is legacy API to casafari services
+Casafari legacy API to casafari services
 
 Created by [@lionhard83](https://github.com/lionhard83)
 Docs: https://developer.casafari.com/
