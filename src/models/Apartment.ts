@@ -1,4 +1,4 @@
-type Locate = {
+export type Locate = {
   location_id: number;
   name: string;
   administrative_level: string;
@@ -10,13 +10,13 @@ export type Coordinate = {
   longitude: number;
 };
 
-type ContactsInfo = {
+export type ContactsInfo = {
   name: string | null;
   email: string | null;
   phone: string;
 };
 
-type Features = {
+export type Features = {
   floor: string;
   orientation: string | null;
   views: string[];
@@ -24,7 +24,7 @@ type Features = {
   characteristics: string[];
 };
 
-type Result = {
+export type Result = {
   alert_id: number;
   listing_id: number;
   ref: string;

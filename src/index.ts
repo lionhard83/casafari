@@ -4,9 +4,8 @@ import { Feed, FeedPayload, FeedResponseOnCreate } from "./models/Feed";
 import { Type } from "./models/Types";
 const baseUrl = "https://api.casafari.com/v1";
 
-export default function (token: string) {
-  const config = { headers: { Authorization: "" } };
-  config.headers.Authorization = token;
+export default (token: string) => {
+  const config = { headers: { Authorization: token } };
 
   const setToken = (token: string) => {
     config.headers.Authorization = token;
@@ -46,4 +45,4 @@ export default function (token: string) {
     getTypes,
     setToken,
   };
-}
+};

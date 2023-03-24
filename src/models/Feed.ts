@@ -1,6 +1,6 @@
 import { Coordinate } from "./Apartment";
 
-type OtherFilter = {
+export type OtherFilter = {
   types: (
     | "apartment"
     | "studio"
@@ -75,7 +75,7 @@ type OtherFilter = {
   has_phone: boolean;
 };
 
-type Filter = {
+export type Filter = {
   operation: "sale" | "rent";
 } & Partial<OtherFilter>;
 
