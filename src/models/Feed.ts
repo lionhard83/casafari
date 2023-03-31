@@ -31,20 +31,20 @@ export type OtherFilter = {
     | "mix_use_building"
   )[];
   custom_location: Coordinate[];
-  locationIds: number[];
+  location_ids: number[];
   conditions: ("used" | "ruin" | "very-good" | "new" | "other")[];
-  statuses: ("active" | "reserved")[];
+  statuses: ("active" | "reserved" | "hold" | "sold" | "rented")[];
   alert_date_from: string;
   alert_date_to: string;
-  priceFrom: number;
-  priceTo: number;
-  pricePerSqMFrom: number;
-  pricePerSqMTo: number;
-  bedroomsFrom: number;
-  bedroomsTo: number;
-  totalAreaFrom: number;
-  totalAreaTo: number;
-  constructionYearFrom: number;
+  price_from: number;
+  price_to: number;
+  price_per_sqm_from: number;
+  price_per_sqm_to: number;
+  bedrooms_from: number;
+  bedrooms_to: number;
+  total_area_from: number;
+  total_area_to: number;
+  construction_year_from: number;
   floors: ("no_floor" | "ground" | "middle" | "top")[];
   views: ("water" | "landscape" | "city" | "golf" | "park")[];
   directions: ("north" | "south" | "east" | "west")[];
@@ -66,13 +66,15 @@ export type OtherFilter = {
   private: boolean;
   auction: boolean;
   bank: boolean;
-  newDevelopment: boolean;
-  withoutAgencies: string[];
+  new_development: boolean;
+  without_agencies: string[];
   with_agencies: string[];
   listing_agents: string[];
   exclusive: boolean;
   ref_numbers: string[];
   has_phone: boolean;
+  bathrooms_from: number;
+  bathrooms_to: number;
 };
 
 export type Filter = {
