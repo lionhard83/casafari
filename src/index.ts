@@ -1,6 +1,19 @@
 import axios from "axios";
-import { Data } from "./models/Apartment";
-import { Feed, FeedPayload, FeedResponseOnCreate } from "./models/Feed";
+import {
+  Data,
+  Locate,
+  Coordinate,
+  ContactsInfo,
+  Features,
+  Result,
+} from "./models/Apartment";
+import {
+  Feed,
+  FeedPayload,
+  FeedResponseOnCreate,
+  Filter,
+  OtherFilter,
+} from "./models/Feed";
 import { Type } from "./models/Types";
 const baseUrl = "https://api.casafari.com/v1";
 
@@ -45,4 +58,19 @@ export default (token: string) => {
     getTypes,
     setToken,
   };
+};
+
+export {
+  Feed,
+  FeedPayload,
+  FeedResponseOnCreate,
+  Filter,
+  OtherFilter,
+  Data,
+  Type,
+  Locate,
+  Coordinate,
+  ContactsInfo,
+  Features,
+  Result,
 };
