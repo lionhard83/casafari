@@ -13,6 +13,7 @@ import {
   FeedResponseOnCreate,
   Filter,
   OtherFilter,
+  QueryFilter,
 } from "./models/Feed";
 import { Type } from "./models/Types";
 const baseUrl = "https://api.casafari.com/v1";
@@ -26,8 +27,13 @@ export default (token: string) => {
   const getTypes = async () =>
     (await axios.get<Type[]>(`${baseUrl}/references/types`, config)).data;
 
-  const getFeeds = async () =>
-    (await axios.get<Feed[]>(`${baseUrl}/listing-alerts/feeds`, config)).data;
+  const getFeeds = async (params?: Partial<QueryFilter>) =>
+    (
+      await axios.get<Feed[]>(`${baseUrl}/listing-alerts/feeds`, {
+        ...config,
+        params,
+      })
+    ).data;
 
   const createFeed = async (body: FeedPayload) =>
     (
@@ -66,6 +72,7 @@ export {
   FeedResponseOnCreate,
   Filter,
   OtherFilter,
+  QueryFilter,
   Data,
   Type,
   Locate,
