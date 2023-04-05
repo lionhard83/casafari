@@ -27,13 +27,8 @@ export default (token: string) => {
   const getTypes = async () =>
     (await axios.get<Type[]>(`${baseUrl}/references/types`, config)).data;
 
-  const getFeeds = async (params?: Partial<QueryFilter>) =>
-    (
-      await axios.get<Feed[]>(`${baseUrl}/listing-alerts/feeds`, {
-        ...config,
-        params,
-      })
-    ).data;
+  const getFeeds = async () =>
+    (await axios.get<Feed[]>(`${baseUrl}/listing-alerts/feeds`, config)).data;
 
   const createFeed = async (body: FeedPayload) =>
     (
@@ -52,9 +47,13 @@ export default (token: string) => {
       )
     ).data;
 
-  const getFeed = async (id: number) =>
-    (await axios.get<Data>(`${baseUrl}/listing-alerts/feeds/${id}`, config))
-      .data;
+  const getFeed = async (id: number, params?: Partial<QueryFilter>) =>
+    (
+      await axios.get<Data>(`${baseUrl}/listing-alerts/feeds/${id}`, {
+        ...config,
+        params,
+      })
+    ).data;
 
   return {
     getFeed,
