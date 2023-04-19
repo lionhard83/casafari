@@ -1,6 +1,6 @@
 {
   "name": "casafari",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Casafari api legacy",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

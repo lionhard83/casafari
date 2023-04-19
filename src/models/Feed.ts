@@ -94,8 +94,8 @@ export type QueryFilter = {
   limit: number;
   offset: number;
   order_by: "alert_id" | " created_at" | "updated_at";
-  alert_date_from: "string";
-  alert_date_to: "string";
+  alert_date_from: string;
+  alert_date_to: string;
   alert_subtype:
     | "new"
     | "price_up"
