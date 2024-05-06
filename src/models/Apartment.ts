@@ -33,6 +33,7 @@ export type Result = {
   old_value: string;
   new_value: string;
   alert_date: string;
+  alert_date_and_time: string | null;
   property_url: string;
   listing_url: string;
   property_id: number;
