@@ -30,7 +30,7 @@ export type OtherFilter = {
     | "office_building"
     | "mix_use_building"
   )[];
-  custom_location: Coordinate[];
+  custom_locations: Array<Coordinate[]>;
   location_ids: number[];
   conditions: ("used" | "ruin" | "very-good" | "new" | "other")[];
   statuses: ("active" | "reserved" | "hold" | "sold" | "rented")[];
