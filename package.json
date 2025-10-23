@@ -1,6 +1,6 @@
 {
   "name": "casafari",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Casafari api legacy",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,6 +24,10 @@
     "type": "git",
     "url": "git+https://github.com/lionhard83/casafari"
   },
+  "bugs": {
+    "url": "https://github.com/lionhard83/casafari/issues"
+  },
+  "homepage": "https://github.com/lionhard83/casafari#readme",
   "dependencies": {
     "axios": "^1.11.0"
   }
