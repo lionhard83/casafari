@@ -103,4 +103,6 @@ export type QueryFilter = {
     | "reserved"
     | "delisted"
     | "sold";
+  created_at_from: string;
+  created_at_to: string;
 };
