@@ -77,8 +77,20 @@ export type OtherFilter = {
   bathrooms_to: number;
 };
 
+export type Operation =
+  | "sale"
+  | "sold"
+  | "sale_hold"
+  | "rent"
+  | "rented"
+  | "rent_hold";
+
+export type OperationPayload = {
+  search_operations: Operation;
+};
+
 export type Filter = {
-  operation: "sale" | "rent";
+  operation: Operation;
 } & Partial<OtherFilter>;
 
 export type FeedPayload = {

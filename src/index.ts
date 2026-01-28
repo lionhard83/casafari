@@ -12,6 +12,8 @@ import {
   FeedPayload,
   FeedResponseOnCreate,
   Filter,
+  Operation,
+  OperationPayload,
   OtherFilter,
   QueryFilter,
 } from "./models/Feed";
@@ -35,7 +37,7 @@ export default (token: string) => {
       await axios.post<FeedResponseOnCreate>(
         `${baseUrl}/listing-alerts/feeds`,
         body,
-        config
+        config,
       )
     ).data;
 
@@ -43,7 +45,7 @@ export default (token: string) => {
     (
       await axios.delete<{ success: boolean }>(
         `${baseUrl}/listing-alerts/feeds/${id}`,
-        config
+        config,
       )
     ).data;
 
@@ -55,6 +57,9 @@ export default (token: string) => {
       })
     ).data;
 
+  const searchProperties = async (body: OperationPayload) =>
+    (await axios.post<Data>(`${baseUrl}/properties/search`, body, config)).data;
+
   return {
     getFeed,
     deleteFeed,
@@ -62,6 +67,7 @@ export default (token: string) => {
     getFeeds,
     getTypes,
     setToken,
+    searchProperties,
   };
 };
 
@@ -79,4 +85,6 @@ export {
   ContactsInfo,
   Features,
   Result,
+  OperationPayload,
+  Operation,
 };
