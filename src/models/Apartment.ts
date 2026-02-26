@@ -19,8 +19,10 @@ export type ContactsInfo = {
 export type Features = {
   floor: string;
   orientation: string | null;
-  views: string[];
-  directions: string[];
+  view?: string | null;
+  views: string[] | null;
+  direction?: string | null;
+  directions: string[] | null;
   characteristics: string[];
 };
 
@@ -77,6 +79,17 @@ export type Result = {
   thumbnails: string[];
   pictures: string[];
   energy_certificate: string;
+  listing_old_url?: string | null;
+  listing_uid?: string;
+  zip_code?: string | null;
+  cadastral_reference?: string | null;
+  sale_price_per_sqm_base?: number;
+  rent_price_per_sqm_base?: number;
+  agency_legal_id?: string;
+  energy_rating?: string;
+  heating_type?: string;
+  created_at: string;
+  updated_at: string;
 };
 
 export type Data = {
