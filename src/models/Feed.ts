@@ -102,10 +102,13 @@ export type Feed = { id: number; user: string; name: string };
 
 export type FeedResponseOnCreate = Feed & { filter: Filter };
 
+type OrderByKey = "alert_date" | "alert_id" | "created_at" | "updated_at";
+export type OrderBy = OrderByKey | `-${OrderByKey}`;
+
 export type QueryFilter = {
   limit: number;
   offset: number;
-  order_by: "alert_id" | " created_at" | "updated_at";
+  order_by: OrderBy;
   alert_date_from: string;
   alert_date_to: string;
   alert_subtype:
